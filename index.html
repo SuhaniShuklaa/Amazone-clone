@@ -24,22 +24,33 @@
                 <select class="search-select">
                     <option>All</option>
                 </select>
-                <input placeholder="Search Amazon" class="search-input">
-                <div class="search-icon">
-                    <i class="fa-solid fa-magnifying-glass"></i>
-                </div>
+                
+<input
+    type="text"
+    placeholder="Search Amazon"
+    class="search-input"
+    id="search-input"
+>
+        <div class="search-icon" id="search-button">
+        <i class="fa-solid fa-magnifying-glass"></i>
+        </div>
+
             </div>
-            <div class="nav-signin border">
-            <p><span>Hello, sign in</span></p>
-            <p class="nav-second"> Account & lists</p>
-         </div>
+         
+
+<a href="signin.html" class="nav-signin border">
+    <p><span id="hello-user">Hello, sign in</span></p>
+    <p class="nav-second">Account &amp; Lists</p>
+</a>
+
          <div class="nav-return border">
             <p><span>return </span></p>
             <p class="nav-second">& Orders</p>
          </div>
-         <div class="nav.cart border">
-           <i class="fa-solid fa-cart-shopping"></i> 
-           Cart
+           <div class="nav-cart border">
+    <i class="fa-solid fa-cart-shopping"></i>
+    Cart <span id="cart-count">0</span>
+</div>
         </div>
      </div>
 
@@ -69,92 +80,93 @@
         <div class="box1 box">
             <div class="box-content">
             <h2>Clothes</h2> 
-            <div class="box-img" style="background-image: url('box1_image.jpg');"></div>
+            <div class="box-img" style="background-image: url('images/box1_image.jpg');"></div>
             <p>See more</p>
             </div>
         </div>
         <div class="box2 box">
             <div class="box-content">
             <h2>Health & Personal Care</h2> 
-            <div class="box-img" style="background-image: url('box2_image.jpg');"></div>
+            <div class="box-img" style="background-image: url('images/box2_image.jpg');"></div>
             <p>See more</p>
             </div>
         </div>
         <div class="box3 box">
             <div class="box-content">
             <h2>Furniture</h2> 
-            <div class="box-img" style="background-image: url('box3_image.jpg');"></div>
+            <div class="box-img" style="background-image: url('images/box3_image.jpg');"></div>
             <p>See more</p>
             </div>
         </div>
         <div class="box4 box">
             <div class="box-content">
             <h2>Electronics</h2> 
-            <div class="box-img" style="background-image: url('box4_image.jpg');"></div>
+            <div class="box-img" style="background-image: url('images/box4_image.jpg');"></div>
             <p>See more</p>
             </div>
         </div>
          <div class="box1 box">
             <div class="box-content">
             <h2>Beauty Products</h2> 
-            <div class="box-img" style="background-image: url('box5_image.jpg');"></div>
+            <div class="box-img" style="background-image: url('images/box5_image.jpg');"></div>
             <p>See more</p>
             </div>
         </div>
         <div class="box2 box">
             <div class="box-content">
             <h2>Animal Care</h2> 
-            <div class="box-img" style="background-image: url('box6_image.jpg');"></div>
+            <div class="box-img" style="background-image: url('images/box6_image.jpg');"></div>
             <p>See more</p>
             </div>
         </div>
         <div class="box3 box">
             <div class="box-content">
             <h2>Toys</h2> 
-            <div class="box-img" style="background-image: url('box7_image.jpg');"></div>
+            <div class="box-img" style="background-image: url('images/box7_image.jpg');"></div>
             <p>See more</p>
             </div>
         </div>
         <div class="box4 box">
             <div class="box-content">
             <h2>dresses</h2> 
-            <div class="box-img" style="background-image: url('box8_image.jpg');"></div>
+            <div class="box-img" style="background-image: url('images/box8_image.jpg');"></div>
             <p>See more</p>
             </div>
         </div>
      </div>
-    <footer>
-    <div class="foot-panel1" onclick="window.scrollTo({top: 0, behavior: 'smooth'})">
+<footer>
+    <div class="foot-panel1"
+         onclick="window.scrollTo({top: 0, behavior: 'smooth'})">
         Back to Top ↑
     </div>
 
     <div class="foot-panel2">
         <div class="foot-column">
             <h3>Get to Know Us</h3>
-            <a href="about.html">About Us</a>
-            <a href="careers.html">Careers</a>
-            <a href="press.html">Press Releases</a>
+            <a href="#" class="footer-info" data-info="about">About Us</a>
+            <a href="#" class="footer-info" data-info="careers">Careers</a>
+            <a href="#" class="footer-info" data-info="press">Press Releases</a>
         </div>
 
         <div class="foot-column">
             <h3>Connect with Us</h3>
-            <a href="contact.html">Contact Us</a>
-            <a href="feedback.html">Feedback</a>
-            <a href="help.html">Help Center</a>
+            <a href="#" class="footer-info" data-info="contact">Contact Us</a>
+            <a href="#" class="footer-info" data-info="feedback">Feedback</a>
+            <a href="#" class="footer-info" data-info="help">Help Center</a>
         </div>
 
         <div class="foot-column">
             <h3>Shopping</h3>
             <a href="index.html">Home</a>
-            <a href="clothes.html">Clothes</a>
-            <a href="electronics.html">Electronics</a>
+            <a href="#" class="footer-info" data-info="clothes">Clothes</a>
+            <a href="#" class="footer-info" data-info="electronics">Electronics</a>
         </div>
 
         <div class="foot-column">
             <h3>Customer Service</h3>
-            <a href="help.html">Help</a>
-            <a href="returns.html">Returns Policy</a>
-            <a href="orders.html">My Orders</a>
+            <a href="#" class="footer-info" data-info="help">Help</a>
+            <a href="#" class="footer-info" data-info="returns">Returns Policy</a>
+            <a href="#" class="footer-info" data-info="orders">My Orders</a>
         </div>
     </div>
 
@@ -167,5 +179,25 @@
         <p>© 2026 Amazon Clone | Created for Educational Purpose</p>
     </div>
 </footer>
+
+<!-- Footer information popup -->
+<div id="footer-info-box" class="footer-info-box" style="display:none;">
+    <button id="footer-info-close" class="footer-close"
+            aria-label="Close information">✕</button>
+    <h2 id="footer-info-title"></h2>
+    <p id="footer-info-text"></p>
+</div>
+```
+<script>
+    const savedName = localStorage.getItem("userName");
+
+    if (savedName) {
+        document.getElementById("hello-user").textContent =
+            "Hello, " + savedName;
+    }
+</script>
+
+<script src="script.js"></script>
+
 </body>
 </html>
