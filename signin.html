@@ -1,0 +1,103 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign In - Amazon Clone</title>
+    <link rel="stylesheet" href="styling.css">
+    <style>
+        
+html, body {
+    background-color: #ffffff !important;
+    color: #111111;
+    min-height: 100%;
+}
+
+.login-page {
+    background-color: #ffffff;
+    color: #111111;
+    border: 1px solid #ddd;
+}
+
+        .login-page {
+            max-width: 350px;
+            margin: 50px auto;
+            padding: 25px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            font-family: Arial, sans-serif;
+        }
+
+        .login-page h1 {
+            margin-bottom: 20px;
+        }
+
+        .login-page label {
+            display: block;
+            margin: 12px 0 6px;
+            font-weight: bold;
+        }
+
+        .login-page input {
+            width: 100%;
+            box-sizing: border-box;
+            padding: 10px;
+            border: 1px solid #888;
+            border-radius: 4px;
+        }
+
+        .login-page button {
+            width: 100%;
+            margin-top: 20px;
+            padding: 10px;
+            background: #ffd814;
+            border: 1px solid #fcd200;
+            border-radius: 20px;
+            cursor: pointer;
+        }
+
+        #login-message {
+            margin-top: 15px;
+            color: #067d62;
+        }
+    </style>
+</head>
+<body>
+    <div class="login-page">
+        <h1>Sign in</h1>
+
+        <form id="login-form">
+            <label for="username">Your name</label>
+            <input id="username" type="text"
+                   placeholder="Enter your name" required>
+
+            <label for="email">Email</label>
+            <input id="email" type="email"
+                   placeholder="Enter your email" required>
+
+            <label for="password">Password</label>
+            <input id="password" type="password"
+                   placeholder="Enter a demo password" required>
+
+            <button type="submit">Sign in</button>
+        </form>
+
+        <p id="login-message"></p>
+        <p><a href="index.html">← Back to Home</a></p>
+    </div>
+
+    <script>
+        document.getElementById("login-form")
+            .addEventListener("submit", function(event) {
+                event.preventDefault();
+
+                const name = document.getElementById("username").value.trim();
+                localStorage.setItem("userName", name);
+
+                document.getElementById("login-message").textContent =
+                    "Welcome, " + name + "! Demo sign-in successful.";
+            });
+    </script>
+</body>
+</html>
