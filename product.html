@@ -305,6 +305,61 @@
 
         displayProducts(selectedCategory);
         updateCartCount();
+        const productSearch = document.getElementById("product-search");
+
+    productSearch.addEventListener("input", function () {
+        const query = productSearch.value.trim().toLowerCase();
+        const selectedCategory =
+            new URLSearchParams(window.location.search).get("category") || "All";
+
+        const filteredProducts = products.filter(function (product) {
+            const matchesSearch =
+                product.name.toLowerCase().includes(query) ||
+                product.category.toLowerCase().includes(query);
+
+            const matchesCategory =
+                selectedCategory.toLowerCase() === "all" ||
+                product.category.toLowerCase() === selectedCategory.toLowerCase();
+
+            return matchesSearch && matchesCategory;
+        });
+
+        container.innerHTML = "";
+
+        emptyMessage.style.display =
+            filteredProducts.length === 0 ? "block" : "none";
+
+        filteredProducts.forEach(function (product) {
+            const card = document.createElement("div");
+            card.className = "product-card";
+
+            const image = document.createElement("img");
+            image.src = product.image;
+            image.alt = product.name;
+            image.onerror = function () {
+                this.style.display = "none";
+            };
+
+            const name = document.createElement("h3");
+            name.textContent = product.name;
+
+            const category = document.createElement("p");
+            category.textContent = product.category;
+
+            const price = document.createElement("p");
+            price.className = "price";
+            price.textContent = "₹" + product.price.toLocaleString("en-IN");
+
+            const button = document.createElement("button");
+            button.textContent = "Add to Cart";
+            button.addEventListener("click", function () {
+                addToCart(product);
+            });
+
+            card.append(image, name, category, price, button);
+            container.appendChild(card);
+        });
+    });
     </script>
 
 </body>
