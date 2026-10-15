@@ -334,3 +334,32 @@ a {
 .footer-info-box[style*="display: block"] {
     display: block;
 }
+/* See More - Working Demo Styling */
+.box-content .see-more-btn {
+display: inline-block;
+color: #007185;
+font-size: 0.9rem;
+cursor: pointer;
+margin-top: 5px;
+padding: 4px 0;
+background: none;
+border: none;
+text-align: left;
+}
+
+.box-content .see-more-btn:hover {
+color: #c45500;
+text-decoration: underline;
+}
+
+/* Extra information shown after clicking See More */
+.extra-category-content {
+color: #0f1111;
+line-height: 1.5;
+font-size: 0.9rem;
+}
+
+.extra-category-content h3 {
+color: #0f1111;
+margin-bottom: 8px;
+}
