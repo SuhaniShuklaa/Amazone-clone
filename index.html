@@ -191,8 +191,8 @@
         <div class="foot-column">
             <h3>Shopping</h3>
             <a href="index.html">Home</a>
-            <a href="products.html?category=Clothes">Clothes</a>
-            <a href="products.html?category=Electronics">Electronics</a>
+            <a href="product.html?category=Clothes">Clothes</a>
+            <a href="product.html?category=Electronics">Electronics</a>
         </div>
 
         <div class="foot-column">
@@ -245,7 +245,7 @@
         function openProducts() {
             const category = heading.textContent.trim();
             window.location.href =
-                "products.html?category=" + encodeURIComponent(category);
+                "product.html?category=" + encodeURIComponent(category);
         }
 
         if (seeMore) {
