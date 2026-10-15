@@ -171,3 +171,73 @@ if (footerClose && footerBox) {
         footerBox.style.display = "none";
     });
 }
+/* NAVBAR OPTIONS */
+
+const navOptions = document.querySelectorAll(".nav-option");
+
+const navContent = {
+    deals: {
+        title: "Today's Deals",
+        text: "Welcome to Today's Deals! Explore our demo offers on Clothes, Electronics, Beauty Products and more."
+    },
+    service: {
+        title: "Customer Service",
+        text: "Welcome to Customer Service! Here you can find help with shopping, orders, returns and frequently asked questions."
+    },
+    registry: {
+        title: "Registry",
+        text: "Create your demo gift registry for birthdays, weddings and special occasions."
+    },
+    giftcards: {
+        title: "Gift Cards",
+        text: "Explore our demo gift cards. Choose a gift card amount: ₹500, ₹1,000 or ₹2,000."
+    },
+    sell: {
+        title: "Sell on Amazon Clone",
+        text: "This is a demo seller section for our BCA mini project. Product selling and real payments are not enabled."
+    }
+};
+
+navOptions.forEach(function(option) {
+    option.style.cursor = "pointer";
+
+    option.addEventListener("click", function() {
+        const page = navContent[option.dataset.page];
+
+        if (!page) return;
+
+        let popup = document.getElementById("nav-content-popup");
+
+        if (!popup) {
+            popup = document.createElement("div");
+            popup.id = "nav-content-popup";
+            popup.style.cssText =
+                "position:fixed;top:50%;left:50%;transform:translate(-50%,-50%);" +
+                "width:85%;max-width:400px;background:white;padding:24px;" +
+                "border-radius:12px;box-shadow:0 4px 25px #0005;z-index:9999;" +
+                "font-family:Arial,sans-serif;";
+
+            document.body.appendChild(popup);
+        }
+
+        popup.innerHTML = "";
+
+        const heading = document.createElement("h2");
+        heading.textContent = page.title;
+
+        const description = document.createElement("p");
+        description.textContent = page.text;
+
+        const closeButton = document.createElement("button");
+        closeButton.textContent = "Close";
+        closeButton.style.cssText =
+            "background:#febd69;border:0;padding:10px 22px;" +
+            "border-radius:6px;cursor:pointer;";
+
+        closeButton.addEventListener("click", function() {
+            popup.remove();
+        });
+
+        popup.append(heading, description, closeButton);
+    });
+});
