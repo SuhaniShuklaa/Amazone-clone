@@ -309,13 +309,14 @@
 
     productSearch.addEventListener("input", function () {
         const query = productSearch.value.trim().toLowerCase();
+        const cleanQuery = query.replace(/[^a-z0-9]/g, "");
         const selectedCategory =
             new URLSearchParams(window.location.search).get("category") || "All";
 
         const filteredProducts = products.filter(function (product) {
             const matchesSearch =
-                product.name.toLowerCase().includes(query) ||
-                product.category.toLowerCase().includes(query);
+                product.name.toLowerCase().replace(/[^a-z0-9]/g, "").includes(cleanQuery) ||
+product.category.toLowerCase().replace(/[^a-z0-9]/g, "").includes(cleanQuery);
 
             const matchesCategory =
                 selectedCategory.toLowerCase() === "all" ||
